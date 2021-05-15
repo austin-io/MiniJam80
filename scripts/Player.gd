@@ -1,5 +1,8 @@
 extends KinematicBody
 
+export (float) var MAX_SPEED = 10.0;
+export (int) var health = 9;
+
 onready var meowSFX = [
 	preload("res://assets/music/Meow_01.wav"),
 	preload("res://assets/music/Meow_02.wav"),
@@ -8,23 +11,24 @@ onready var meowSFX = [
 	preload("res://assets/music/Meow_05.wav")
 ];
 
-onready var audioPlayer = $AudioStreamPlayer3D;
-
 onready var hairball = preload("res://scenes/Hairball.tscn");
 
-var isGrounded : bool = false;
+onready var audioPlayer = $AudioStreamPlayer3D;
 onready var ray = $RayCast;
+onready var pivot = $Pivot;
+onready var cam = $Pivot/Camera;
+onready var livesLabel = $CanvasLayer/HUD/HBoxContainer/CenterContainer4/Label;
+
+var isGrounded : bool = false;
 
 var canShoot : bool = true;
 var canSwipe : bool = true;
+var isVulnerable : bool = true;
 
 const mouseSensitivity = 0.002;
-onready var pivot = $Pivot;
-onready var cam = $Pivot/Camera;
 
 var vel : Vector3 = Vector3.ZERO;
 var targetVel = Vector2.ZERO;
-export (float) var MAX_SPEED = 10.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -98,3 +102,17 @@ func swipeTimeout():
 
 func swipeCooldown():
 	canSwipe = true;
+
+func _on_Hurtbox_area_entered(area):
+	if(!isVulnerable): return;
+	
+	print("Player hurt!");
+	
+	health -= 1;
+	livesLabel.text = "Lives: " + str(health);
+	isVulnerable = false;
+	
+	$InvincibilityTimer.start();
+
+func _on_InvincibilityTimer_timeout():
+	isVulnerable = true;
