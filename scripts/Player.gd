@@ -11,8 +11,10 @@ onready var meowSFX = [
 	preload("res://assets/music/Meow_05.wav")
 ];
 
+
 onready var hairball = preload("res://scenes/Hairball.tscn");
 
+onready var animSprite = $CanvasLayer/HUD/AnimatedSprite;
 onready var audioPlayer = $AudioStreamPlayer3D;
 onready var ray = $RayCast;
 onready var pivot = $Pivot;
@@ -62,10 +64,12 @@ func getInput(dt):
 		print("Melee swipe attack!");
 		canSwipe = false;
 		
+		animSprite.play("Swipe");
+		
 		playRandSound();
 		
 		$Pivot/Camera/Swipe/CollisionShape.disabled = false;
-		$Pivot/Camera/Swipe.visible = true;
+		#$Pivot/Camera/Swipe.visible = true;
 		$SwipeTimer.start();
 	
 	# Range Attack
@@ -97,11 +101,12 @@ func shootCooldown():
 
 func swipeTimeout():
 	$Pivot/Camera/Swipe/CollisionShape.disabled = true;
-	$Pivot/Camera/Swipe.visible = false;
+	#$Pivot/Camera/Swipe.visible = false;
 	$SwipeCooldown.start();
 
 func swipeCooldown():
 	canSwipe = true;
+	animSprite.play("default");
 
 func _on_Hurtbox_area_entered(area):
 	if(!isVulnerable): return;

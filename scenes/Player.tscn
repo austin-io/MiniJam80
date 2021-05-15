@@ -1,19 +1,21 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/Swipe.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/art/Cat/idle_anim_spritesheet_15x8.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/Cat/swipe_anim_spritesheet_15x8.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 height = 0.5
 
-[sub_resource type="CapsuleShape" id=9]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.6
 height = 0.5
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 
 void fragment(){
@@ -22,25 +24,110 @@ void fragment(){
 	COLOR.a = len;
 }"
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
 
-[sub_resource type="Gradient" id=4]
+[sub_resource type="Gradient" id=5]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 0, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=5]
-gradient = SubResource( 4 )
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 15, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 30, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 45, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 60, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 75, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 90, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 105, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 15, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
+region = Rect2( 30, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 6 )
+region = Rect2( 45, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 6 )
+region = Rect2( 60, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 6 )
+region = Rect2( 75, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 90, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 105, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 6 )
+region = Rect2( 120, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 6 )
+region = Rect2( 135, 0, 15, 8 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": false,
+"name": "Swipe",
+"speed": 10.0
+} ]
+
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 width = 8
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 48
 font_data = ExtResource( 3 )
 
@@ -61,7 +148,7 @@ collision_mask = 32
 
 [node name="CollisionShape" type="CollisionShape" parent="Hurtbox"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="Pivot" type="Spatial" parent="."]
 
@@ -88,13 +175,19 @@ __meta__ = {
 }
 
 [node name="Vignette" type="NinePatchRect" parent="CanvasLayer/HUD"]
-material = SubResource( 3 )
+material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = SubResource( 5 )
+texture = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/HUD"]
+position = Vector2( 308.348, 333.042 )
+scale = Vector2( 31.0784, 41.8794 )
+frames = SubResource( 28 )
+frame = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD"]
 self_modulate = Color( 0.423529, 0.337255, 0.443137, 1 )
@@ -107,7 +200,7 @@ margin_right = -20.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = SubResource( 7 )
+texture = SubResource( 8 )
 patch_margin_left = 32
 patch_margin_top = 32
 patch_margin_right = 32
@@ -140,7 +233,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Words"
 valign = 1
 
@@ -156,7 +249,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Words"
 valign = 1
 
@@ -172,7 +265,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Words"
 valign = 1
 
@@ -188,7 +281,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 text = "Words"
 valign = 1
 
