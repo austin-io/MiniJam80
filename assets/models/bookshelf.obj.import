@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/bookshelf.obj-c3693fb13cfe55f3d8d58212efd0ec3f.mesh"
+
+[deps]
+
+files=[ "res://.import/bookshelf.obj-c3693fb13cfe55f3d8d58212efd0ec3f.mesh" ]
+
+source_file="res://assets/models/bookshelf.obj"
+dest_files=[ "res://.import/bookshelf.obj-c3693fb13cfe55f3d8d58212efd0ec3f.mesh", "res://.import/bookshelf.obj-c3693fb13cfe55f3d8d58212efd0ec3f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
