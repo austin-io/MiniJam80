@@ -34,7 +34,7 @@ data = {
 }
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 7, 0 )
+"_editor_floor_": Vector3( 0, 0, 0 )
 }
 
 [node name="StaticBody" type="StaticBody" parent="."]
@@ -67,6 +67,9 @@ material/0 = null
 
 [node name="bookshelf2" parent="." instance=ExtResource( 8 )]
 transform = Transform( -1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -26.2187, 1.05851, -21.9599 )
+
+[node name="bookshelf4" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 69.6842, 1.05851, -21.9599 )
 
 [node name="bookshelf3" parent="." instance=ExtResource( 8 )]
 transform = Transform( -1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -26.2187, 1.05851, 2.23016 )
