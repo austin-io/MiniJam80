@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/models/table_2x3.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.764706, 0.45098, 0.172549, 1 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 3.20002, 0.0589328, 1.56167 )
+
+[node name="Table" type="Spatial"]
+
+[node name="table_2x3" type="MeshInstance" parent="."]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 43.2184, 1.01019, -53.2995 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="table_2x3"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="table_2x3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53978, 0 )
+shape = SubResource( 2 )
