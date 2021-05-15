@@ -1,12 +1,32 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/Swipe.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
 height = 0.5
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+void fragment(){
+	float len = length(UV - vec2(0.5));
+	COLOR.rgb = vec3(0.0);
+	COLOR.a = len;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0 )
@@ -25,6 +45,7 @@ font_data = ExtResource( 3 )
 ]]
 collision_mask = 190
 script = ExtResource( 1 )
+MAX_SPEED = 8.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -34,20 +55,34 @@ shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="Pivot"]
 
+[node name="Swipe" parent="Pivot/Camera" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.57488 )
+
 [node name="RayCast" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, -0.6, 0 )
 collision_mask = 12
 collide_with_areas = true
 
-[node name="HUD" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NinePatchRect" type="NinePatchRect" parent="HUD"]
+[node name="Vignette" type="NinePatchRect" parent="CanvasLayer/HUD"]
+material = SubResource( 8 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD"]
 self_modulate = Color( 0.952941, 0.913725, 0.478431, 1 )
 anchor_top = 1.0
 anchor_right = 1.0
@@ -67,7 +102,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HUD"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,12 +115,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="HUD/HBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
 margin_right = 338.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HUD/HBoxContainer/CenterContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 91.0
 margin_top = 20.0
@@ -95,13 +130,13 @@ custom_fonts/font = SubResource( 4 )
 text = "Words"
 valign = 1
 
-[node name="CenterContainer2" type="CenterContainer" parent="HUD/HBoxContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
 margin_left = 342.0
 margin_right = 681.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HUD/HBoxContainer/CenterContainer2"]
+[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer2"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 91.0
 margin_top = 20.0
@@ -111,13 +146,13 @@ custom_fonts/font = SubResource( 4 )
 text = "Words"
 valign = 1
 
-[node name="CenterContainer3" type="CenterContainer" parent="HUD/HBoxContainer"]
+[node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
 margin_left = 685.0
 margin_right = 1024.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HUD/HBoxContainer/CenterContainer3"]
+[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer3"]
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = 91.0
 margin_top = 20.0
@@ -127,7 +162,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Words"
 valign = 1
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="HUD"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/HUD"]
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -143,3 +178,18 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HairballCooldown" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="SwipeTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="SwipeCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="HairballCooldown" to="." method="shootCooldown"]
+[connection signal="timeout" from="SwipeTimer" to="." method="swipeTimeout"]
+[connection signal="timeout" from="SwipeCooldown" to="." method="swipeCooldown"]

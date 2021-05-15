@@ -1,55 +1,237 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/art/floors-walls-garden/floors/floor1.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/floors-walls-garden/floors/floor0.png" type="Texture" id=2]
-[ext_resource path="res://assets/art/floors-walls-garden/garden/flower.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/floors-walls-garden/floors/wooden floor2.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/floors-walls-garden/walls/wall0.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/floors-walls-garden/floors/carpet or something.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/floors-walls-garden/floors/floor3.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/floors-walls-garden/floors/floor2.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/floors-walls-garden/floors/wooden floor1.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/wall1.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/wall3.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/wall2.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/wall5.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/wall4.png" type="Texture" id=13]
+[ext_resource path="res://assets/art/floors-walls-garden/walls/garage door.png" type="Texture" id=14]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 4 )
 uv1_triplanar = true
 
-[sub_resource type="CubeMesh" id=11]
+[sub_resource type="CubeMesh" id=2]
 material = SubResource( 1 )
 
-[sub_resource type="ConvexPolygonShape" id=3]
-points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+[sub_resource type="BoxShape" id=22]
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=23]
+albedo_texture = ExtResource( 9 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=24]
+material = SubResource( 23 )
+
+[sub_resource type="SpatialMaterial" id=25]
+albedo_texture = ExtResource( 11 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=26]
+material = SubResource( 25 )
+
+[sub_resource type="SpatialMaterial" id=27]
+albedo_texture = ExtResource( 10 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=28]
+material = SubResource( 27 )
+
+[sub_resource type="SpatialMaterial" id=29]
+albedo_texture = ExtResource( 13 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=30]
+material = SubResource( 29 )
+
+[sub_resource type="SpatialMaterial" id=31]
+albedo_texture = ExtResource( 12 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=32]
+material = SubResource( 31 )
+
+[sub_resource type="SpatialMaterial" id=33]
+albedo_texture = ExtResource( 14 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=34]
+material = SubResource( 33 )
+
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="PlaneMesh" id=12]
+[sub_resource type="PlaneMesh" id=5]
+material = SubResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=7]
 material = SubResource( 6 )
 
 [sub_resource type="SpatialMaterial" id=10]
-albedo_texture = ExtResource( 2 )
+albedo_texture = ExtResource( 7 )
+
+[sub_resource type="PlaneMesh" id=11]
+material = SubResource( 10 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_texture = ExtResource( 6 )
 
 [sub_resource type="PlaneMesh" id=13]
-material = SubResource( 10 )
+material = SubResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="PlaneMesh" id=15]
+material = SubResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="PlaneMesh" id=17]
+material = SubResource( 16 )
+
+[sub_resource type="StreamTexture" id=18]
+flags = 3
+load_path = "res://.import/carpet or something2.png-7895e6aad1a97c0c4b2fc2d5dc9ac99b.s3tc.stex"
+
+[sub_resource type="SpatialMaterial" id=19]
+albedo_texture = SubResource( 18 )
+
+[sub_resource type="PlaneMesh" id=9]
+material = SubResource( 19 )
+
+[sub_resource type="SpatialMaterial" id=20]
+albedo_texture = ExtResource( 5 )
+
+[sub_resource type="PlaneMesh" id=21]
+material = SubResource( 20 )
 
 [node name="MeshLib" type="Spatial"]
 
 [node name="Walls" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50082, 0, 0 )
-mesh = SubResource( 11 )
+mesh = SubResource( 2 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Walls"]
 collision_layer = 12
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 22 )
+
+[node name="Walls2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.06209, 0, 0 )
+mesh = SubResource( 24 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls2"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls2/StaticBody"]
+shape = SubResource( 22 )
+
+[node name="Walls3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7555, 0, 0 )
+mesh = SubResource( 26 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls3"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls3/StaticBody"]
+shape = SubResource( 22 )
+
+[node name="Walls4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2031, 0, 0 )
+mesh = SubResource( 28 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls4"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls4/StaticBody"]
+shape = SubResource( 22 )
+
+[node name="Walls5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5775, 0, 0 )
+mesh = SubResource( 30 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls5"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls5/StaticBody"]
+shape = SubResource( 22 )
+
+[node name="Walls6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1768, 0, 0 )
+mesh = SubResource( 32 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Walls6"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls6/StaticBody"]
+shape = SubResource( 22 )
+
+[node name="GarageDoor" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5644, 0, 0 )
+mesh = SubResource( 34 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="GarageDoor"]
+collision_layer = 12
+
+[node name="CollisionShape" type="CollisionShape" parent="GarageDoor/StaticBody"]
+shape = SubResource( 22 )
 
 [node name="Floor" type="MeshInstance" parent="."]
-mesh = SubResource( 12 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="Floor2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53138, 0, 0 )
+mesh = SubResource( 7 )
+material/0 = null
+
+[node name="Floor3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381889, 0, 2.41968 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="Floor4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56671, 0, 2.41968 )
 mesh = SubResource( 13 )
 material/0 = null
 
-[node name="Flower" type="Sprite3D" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 1, 0, 0, 0 )
-billboard = 2
-texture = ExtResource( 3 )
+[node name="Wood" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94993, 0, 2.41968 )
+mesh = SubResource( 15 )
+material/0 = null
+
+[node name="Wood2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28073, 0, 2.41968 )
+mesh = SubResource( 17 )
+material/0 = null
+
+[node name="Carpet" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.93774, 0, 0 )
+mesh = SubResource( 9 )
+material/0 = null
+
+[node name="Carpet2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.35602, 0, 0 )
+mesh = SubResource( 21 )
+material/0 = null

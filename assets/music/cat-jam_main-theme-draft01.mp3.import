@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cat-jam_main-theme-draft01.mp3-514a6446d9e4f1fac9b0b091a22a8b36.mp3str"
+
+[deps]
+
+source_file="res://assets/music/cat-jam_main-theme-draft01.mp3"
+dest_files=[ "res://.import/cat-jam_main-theme-draft01.mp3-514a6446d9e4f1fac9b0b091a22a8b36.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
