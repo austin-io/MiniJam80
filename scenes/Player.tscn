@@ -55,7 +55,9 @@ shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="Pivot"]
 
-[node name="Swipe" parent="Pivot/Camera" instance=ExtResource( 4 )]
+[node name="Swipe" parent="Pivot/Camera" groups=[
+"Swipe",
+] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.57488 )
 
 [node name="RayCast" type="RayCast" parent="."]
@@ -74,7 +76,6 @@ __meta__ = {
 }
 
 [node name="Vignette" type="NinePatchRect" parent="CanvasLayer/HUD"]
-visible = false
 material = SubResource( 3 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -117,47 +118,63 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_right = 338.0
+margin_right = 253.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 91.0
+margin_left = 48.0
 margin_top = 20.0
-margin_right = 247.0
+margin_right = 204.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "Words"
 valign = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_left = 342.0
-margin_right = 681.0
+margin_left = 257.0
+margin_right = 510.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer2"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 91.0
+margin_left = 48.0
 margin_top = 20.0
-margin_right = 247.0
+margin_right = 204.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "Words"
 valign = 1
 
 [node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_left = 685.0
-margin_right = 1024.0
+margin_left = 514.0
+margin_right = 767.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer3"]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 91.0
+margin_left = 48.0
 margin_top = 20.0
-margin_right = 247.0
+margin_right = 204.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 8 )
+text = "Words"
+valign = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
+margin_left = 771.0
+margin_right = 1024.0
+margin_bottom = 100.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer4"]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 48.0
+margin_top = 20.0
+margin_right = 204.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 8 )
 text = "Words"
@@ -190,6 +207,9 @@ one_shot = true
 
 [node name="SwipeCooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "PlayerSFX"
 
 [connection signal="timeout" from="HairballCooldown" to="." method="shootCooldown"]
 [connection signal="timeout" from="SwipeTimer" to="." method="swipeTimeout"]

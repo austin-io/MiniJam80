@@ -1,5 +1,15 @@
 extends KinematicBody
 
+onready var meowSFX = [
+	preload("res://assets/music/Meow_01.wav"),
+	preload("res://assets/music/Meow_02.wav"),
+	preload("res://assets/music/Meow_03.wav"),
+	preload("res://assets/music/Meow_04.wav"),
+	preload("res://assets/music/Meow_05.wav")
+];
+
+onready var audioPlayer = $AudioStreamPlayer3D;
+
 onready var hairball = preload("res://scenes/Hairball.tscn");
 
 var isGrounded : bool = false;
@@ -18,6 +28,7 @@ export (float) var MAX_SPEED = 10.0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize();
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,16 +53,23 @@ func getInput(dt):
 	if(!isGrounded):
 		vel.y -= 10;
 	
+	# Melee Attack
 	if(Input.is_action_just_pressed("attack") && canSwipe):
 		print("Melee swipe attack!");
 		canSwipe = false;
+		
+		playRandSound();
+		
 		$Pivot/Camera/Swipe/CollisionShape.disabled = false;
 		$Pivot/Camera/Swipe.visible = true;
 		$SwipeTimer.start();
 	
+	# Range Attack
 	if(Input.is_action_just_pressed("shoot") && canShoot):
 		print("Hairball!");
 		canShoot = false;
+		
+		playRandSound();
 		
 		$HairballCooldown.start();
 		
@@ -64,6 +82,11 @@ func getInput(dt):
 
 func _physics_process(delta):
 	vel = move_and_slide(vel * MAX_SPEED, Vector3.UP);
+
+func playRandSound():
+	if(audioPlayer.get_playback_position() > 1.5 || !audioPlayer.playing):
+			audioPlayer.stream = meowSFX[ randi() % meowSFX.size() ];
+			audioPlayer.play();
 
 func shootCooldown():
 	canShoot = true;
