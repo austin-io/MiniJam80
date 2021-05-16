@@ -6,5 +6,8 @@ var objectsLeft = 0;
 func _ready():
 	pass # Replace with function body.
 
+func registerObject():
+	objectsLeft += 1;
+
 func objectDestroyed():
 	objectsLeft -= 1;

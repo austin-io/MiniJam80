@@ -1,15 +1,15 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/art/pack3/roomba/roomba_active.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Roomba.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/pack3/roomba/roomba_damaged.png" type="Texture" id=3]
+[ext_resource path="res://scenes/StunParticles.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SphereShape" id=1]
 radius = 0.5
 
 [sub_resource type="SphereShape" id=2]
 resource_local_to_scene = true
-radius = 0.7
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0, 0, 1 )
@@ -88,7 +88,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "Damaged",
+"name": "broken",
 "speed": 15.0
 } ]
 
@@ -102,7 +102,7 @@ shape = SubResource( 1 )
 
 [node name="Area" type="Area" parent="."]
 collision_layer = 32
-collision_mask = 64
+collision_mask = 256
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 2 )
@@ -122,3 +122,8 @@ pixel_size = 0.2
 billboard = 2
 frames = SubResource( 17 )
 playing = true
+
+[node name="StunParticles" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
