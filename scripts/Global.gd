@@ -1,4 +1,7 @@
 extends Node
+signal objectTotalChanged(num);
+signal objectsRuinedChanged(num);
+signal gameComplete;
 
 var objectsLeft = 0;
 
@@ -8,6 +11,14 @@ func _ready():
 
 func registerObject():
 	objectsLeft += 1;
+	emit_signal("objectTotalChanged", objectsLeft);
 
 func objectDestroyed():
 	objectsLeft -= 1;
+	emit_signal("objectsRuinedChanged", objectsLeft);
+	checkComplete();
+
+func checkComplete():
+	if(objectsLeft <= 0):
+		print("Complete");
+		emit_signal("gameComplete");

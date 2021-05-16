@@ -17,7 +17,6 @@ func _ready():
 	if(spriteFrames):
 		anim.frames = spriteFrames;
 		anim.play("default");
-	
 
 func _on_Destructable_area_entered(area):
 	if(isBroken): return;
@@ -31,5 +30,8 @@ func _on_Destructable_area_entered(area):
 func destroy():
 	print("Destroyed!");
 	$StunParticles.emitting = true;
+	$MeshInstance.visible = false;
+	$AudioStreamPlayer3D.play();
 	anim.play("broken");
+	Global.objectDestroyed();
 	#queue_free();

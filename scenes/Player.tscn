@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/pack3/ui/paw crosshair.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://assets/art/Cat/idle_anim_spritesheet_15x8.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/Cat/swipe_anim_spritesheet_15x8.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/pack3/ui/cat.png" type="Texture" id=7]
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=8]
+[ext_resource path="res://assets/art/pack4/hud/hud.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/pack4/hud/hud_paw.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/pack4/hud/hud_cat_idle.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -120,17 +124,137 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=26]
-offsets = PoolRealArray( 0 )
-colors = PoolColorArray( 1, 1, 1, 1 )
-
-[sub_resource type="GradientTexture" id=27]
-gradient = SubResource( 26 )
-width = 8
-
 [sub_resource type="DynamicFont" id=28]
 size = 48
 font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 11 )
+region = Rect2( 12, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 11 )
+region = Rect2( 24, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 11 )
+region = Rect2( 36, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 11 )
+region = Rect2( 48, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 11 )
+region = Rect2( 60, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 11 )
+region = Rect2( 72, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 11 )
+region = Rect2( 84, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 11 )
+region = Rect2( 96, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 11 )
+region = Rect2( 108, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 11 )
+region = Rect2( 120, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 11 )
+region = Rect2( 132, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 11 )
+region = Rect2( 144, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 11 )
+region = Rect2( 156, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 11 )
+region = Rect2( 168, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 11 )
+region = Rect2( 180, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 11 )
+region = Rect2( 192, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 11 )
+region = Rect2( 204, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 11 )
+region = Rect2( 216, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 11 )
+region = Rect2( 228, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 11 )
+region = Rect2( 240, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 11 )
+region = Rect2( 252, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 11 )
+region = Rect2( 264, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 11 )
+region = Rect2( 276, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 11 )
+region = Rect2( 288, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 11 )
+region = Rect2( 300, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 11 )
+region = Rect2( 312, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 11 )
+region = Rect2( 324, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 11 )
+region = Rect2( 336, 0, 12, 13 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 11 )
+region = Rect2( 348, 0, 12, 13 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody" groups=[
 "Player",
@@ -154,11 +278,18 @@ shape = SubResource( 2 )
 [node name="Pivot" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="Pivot"]
+script = ExtResource( 8 )
 
 [node name="Swipe" parent="Pivot/Camera" groups=[
 "Swipe",
 ] instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.57488 )
+
+[node name="ShakeTween" type="Tween" parent="Pivot/Camera"]
+
+[node name="Duration" type="Timer" parent="Pivot/Camera"]
+
+[node name="Frequency" type="Timer" parent="Pivot/Camera"]
 
 [node name="RayCast" type="RayCast" parent="."]
 enabled = true
@@ -191,32 +322,31 @@ scale = Vector2( 31.0784, 41.8794 )
 frames = SubResource( 25 )
 frame = 1
 
-[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD"]
-self_modulate = Color( 0.423529, 0.337255, 0.443137, 1 )
+[node name="HudBG" type="NinePatchRect" parent="CanvasLayer/HUD"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 20.0
+margin_left = 100.0
 margin_top = -100.0
-margin_right = -20.0
+margin_right = -100.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = SubResource( 27 )
-patch_margin_left = 32
-patch_margin_top = 32
-patch_margin_right = 32
-patch_margin_bottom = 32
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 75, 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD"]
+visible = false
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -100.0
-rect_min_size = Vector2( 0, 100 )
+margin_left = 100.0
+margin_top = -80.0
+margin_right = -100.0
+rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -225,32 +355,30 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_right = 253.0
-margin_bottom = 100.0
+margin_right = 203.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer"]
-self_modulate = Color( 0.976471, 0.509804, 0.517647, 1 )
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 204.0
-margin_bottom = 80.0
+margin_left = 23.0
+margin_top = 10.0
+margin_right = 179.0
+margin_bottom = 70.0
 custom_fonts/font = SubResource( 28 )
 text = "Words"
 valign = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_left = 257.0
-margin_right = 510.0
-margin_bottom = 100.0
+margin_left = 207.0
+margin_right = 410.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer2"]
 self_modulate = Color( 0.909804, 0.796078, 0.494118, 1 )
-margin_left = 86.0
-margin_top = 10.0
-margin_right = 166.0
-margin_bottom = 90.0
+margin_left = 61.0
+margin_right = 141.0
+margin_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 80, 80 )
@@ -259,35 +387,33 @@ size_flags_vertical = 3
 texture = ExtResource( 7 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_left = 514.0
-margin_right = 767.0
-margin_bottom = 100.0
+margin_left = 414.0
+margin_right = 617.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer3"]
-self_modulate = Color( 0.701961, 0.890196, 0.854902, 1 )
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 204.0
-margin_bottom = 80.0
+[node name="Lives" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer3"]
+margin_left = 86.0
+margin_top = 10.0
+margin_right = 116.0
+margin_bottom = 70.0
 custom_fonts/font = SubResource( 28 )
-text = "Words"
+text = "9"
 valign = 1
 
 [node name="CenterContainer4" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
-margin_left = 771.0
-margin_right = 1024.0
-margin_bottom = 100.0
+margin_left = 621.0
+margin_right = 824.0
+margin_bottom = 80.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer4"]
-self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 204.0
-margin_bottom = 80.0
+margin_left = 23.0
+margin_top = 10.0
+margin_right = 179.0
+margin_bottom = 70.0
 custom_fonts/font = SubResource( 28 )
-text = "Words"
+text = "10     10"
 valign = 1
 
 [node name="Crosshair" type="NinePatchRect" parent="CanvasLayer/HUD"]
@@ -304,6 +430,54 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Life" type="Label" parent="CanvasLayer/HUD"]
+margin_left = 530.059
+margin_top = 533.941
+margin_right = 596.059
+margin_bottom = 593.941
+custom_fonts/font = SubResource( 28 )
+text = "9"
+align = 1
+valign = 1
+
+[node name="RuinLeft" type="Label" parent="CanvasLayer/HUD"]
+margin_left = 684.811
+margin_top = 532.0
+margin_right = 790.811
+margin_bottom = 592.0
+custom_fonts/font = SubResource( 28 )
+text = "9"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RuinTotal" type="Label" parent="CanvasLayer/HUD"]
+margin_left = 790.811
+margin_top = 533.941
+margin_right = 896.811
+margin_bottom = 593.941
+custom_fonts/font = SubResource( 28 )
+text = "9"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HudPaw" type="Sprite" parent="CanvasLayer/HUD"]
+position = Vector2( 212.868, 562.455 )
+scale = Vector2( 6.29733, 6.29733 )
+texture = ExtResource( 10 )
+
+[node name="CatFace" type="AnimatedSprite" parent="CanvasLayer/HUD"]
+position = Vector2( 407.256, 546.445 )
+scale = Vector2( 11.0509, 6.69097 )
+frames = SubResource( 29 )
+frame = 16
+playing = true
 
 [node name="HairballCooldown" type="Timer" parent="."]
 wait_time = 0.2
@@ -323,6 +497,8 @@ one_shot = true
 bus = "PlayerSFX"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="timeout" from="Pivot/Camera/Duration" to="Pivot/Camera" method="_on_Duration_timeout"]
+[connection signal="timeout" from="Pivot/Camera/Frequency" to="Pivot/Camera" method="_on_Frequency_timeout"]
 [connection signal="timeout" from="HairballCooldown" to="." method="shootCooldown"]
 [connection signal="timeout" from="SwipeTimer" to="." method="swipeTimeout"]
 [connection signal="timeout" from="SwipeCooldown" to="." method="swipeCooldown"]

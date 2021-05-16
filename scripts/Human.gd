@@ -10,12 +10,14 @@ var target;
 var direction: Vector3;
 var stunned = false;
 var hasHat = true;
+var hatDestroyed = false;
 var hatHealth = 3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target = get_node(targetObj);
 	anim.play("WalkHat");
+	Global.registerObject();
 
 func _physics_process(delta):
 	if(stunned): return;
@@ -30,11 +32,15 @@ func _on_Area_area_entered(area):
 	
 	print("Stunned!");
 	
+	hasHat = hatHealth > 0;
+	
 	if(hasHat):
 		hatHealth -= 1;
-		hasHat = hatHealth >= 0;
 		anim.play("IdleHat");
 	else:
+		if(!hatDestroyed):
+			hatDestroyed = true;
+			Global.objectDestroyed();
 		anim.play("Idle");
 
 	$StunParticles.emitting = true;

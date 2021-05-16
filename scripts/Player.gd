@@ -34,7 +34,8 @@ onready var audioPlayer = $AudioStreamPlayer3D;
 onready var ray = $RayCast;
 onready var pivot = $Pivot;
 onready var cam = $Pivot/Camera;
-onready var livesLabel = $CanvasLayer/HUD/HBoxContainer/CenterContainer4/Label;
+onready var livesLabel = $CanvasLayer/HUD/Life;
+onready var hudPaw = $CanvasLayer/HUD/HudPaw;
 
 var isGrounded : bool = false;
 
@@ -51,7 +52,10 @@ var targetVel = Vector2.ZERO;
 func _ready():
 	randomize();
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
-	livesLabel.text = "Lives: " + str(health);
+	livesLabel.text = str(health);
+	
+	Global.connect("objectTotalChanged", self, "onTotalObjectsChanged");
+	Global.connect("objectsRuinedChanged", self, "onRuinedObjectsChanged");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -83,6 +87,7 @@ func getInput(dt):
 		animSprite.play("Swipe");
 		
 		playRandSound(attackSFX);
+		hudPaw.visible = false;
 		
 		$Pivot/Camera/Swipe/CollisionShape.disabled = false;
 		#$Pivot/Camera/Swipe.visible = true;
@@ -122,18 +127,34 @@ func swipeTimeout():
 
 func swipeCooldown():
 	canSwipe = true;
+	hudPaw.visible = true;
 	animSprite.play("default");
 
 func _on_Hurtbox_area_entered(area):
 	if(!isVulnerable): return;
 	
 	print("Player hurt!");
+	# Add sceen shake, play hurt sound
+	cam.start();
+	playRandSound(meowSFX);
 	
 	health -= 1;
-	livesLabel.text = "Lives: " + str(health);
+	
+	if(health <= 0):
+		print("Dead");
+		get_tree().reload_current_scene();
+	
+	livesLabel.text = str(health);
 	isVulnerable = false;
 	
 	$InvincibilityTimer.start();
 
 func _on_InvincibilityTimer_timeout():
 	isVulnerable = true;
+
+func onTotalObjectsChanged(num):
+	$CanvasLayer/HUD/RuinLeft.text = str(num);
+	$CanvasLayer/HUD/RuinTotal.text = str(num);
+
+func onRuinedObjectsChanged(num):
+	$CanvasLayer/HUD/RuinLeft.text = str(num);

@@ -66,6 +66,7 @@ attack={
 3d_physics/layer_7="PlayerAttack"
 3d_physics/layer_8="Fragile"
 3d_physics/layer_9="Hairball"
+3d_physics/layer_10="Goal"
 
 [physics]
 
