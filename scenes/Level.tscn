@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://basicMeshLib.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/music/cat-jam_main-theme-draft01.mp3" type="AudioStream" id=3]
 [ext_resource path="res://scenes/Human.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Destructables/RedCup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Destructables/RedVase.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/bookshelf.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/armchair.tscn" type="PackedScene" id=10]
@@ -12,6 +14,7 @@
 extents = Vector3( 100, 0.1, 100 )
 
 [node name="Main" type="Spatial"]
+transform = Transform( 1, 0.000231164, -0.000361553, -0.0002312, 1, -7.88697e-05, 0.00036153, 7.89744e-05, 1, 0, 0, 0 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.865405, 0.219475, -0.450449, 0, 0.89897, 0.43801, 0.501073, -0.379056, 0.777973, 0, 30, 0 )
@@ -78,3 +81,21 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 59.3336
 
 [node name="armchair6" parent="." instance=ExtResource( 10 )]
 transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 59.3336, 0, -5.88827 )
+
+[node name="Destructable" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 1.10489e-12, 0, 9.24512e-10, 1, 2.32831e-10, 9.31323e-10, 0, 1, 57.0529, 6.42385, -17.7875 )
+
+[node name="Destructable2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 1.10489e-12, 0, 1.44842e-09, 1, 3.63798e-10, 1.45519e-09, 0, 1, 50.3068, 6.42357, -1.43986 )
+
+[node name="Destructable3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.10489e-12, 0, 2.55072e-10, 1, 6.54836e-11, 2.61934e-10, 0, 1, -26.1725, 6.68851, -0.804531 )
+
+[node name="Destructable4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.10489e-12, 0, 3.42389e-10, 1, 8.73115e-11, 3.49246e-10, 0, 1, -26.1704, 6.68896, 4.95194 )
+
+[node name="Destructable5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.10489e-12, 0, 3.13284e-10, 1, 8.00355e-11, 3.20142e-10, 0, 1, -26.1812, 6.68662, -24.7255 )
+
+[node name="Destructable6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.10489e-12, 0, 4.00602e-10, 1, 1.01863e-10, 4.07454e-10, 0, 1, -26.1791, 6.68707, -18.9691 )
