@@ -1,11 +1,12 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/pack3/ui/paw crosshair.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/Kenney Mini Square.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/Swipe.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/art/Cat/idle_anim_spritesheet_15x8.png" type="Texture" id=5]
 [ext_resource path="res://assets/art/Cat/swipe_anim_spritesheet_15x8.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/pack3/ui/cat.png" type="Texture" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -34,100 +35,100 @@ colors = PoolColorArray( 0, 0, 0, 1 )
 [sub_resource type="GradientTexture" id=6]
 gradient = SubResource( 5 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 15, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 30, 0, 15, 8 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 45, 0, 15, 8 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 15, 0, 15, 8 )
+region = Rect2( 60, 0, 15, 8 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
-region = Rect2( 30, 0, 15, 8 )
+region = Rect2( 75, 0, 15, 8 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 5 )
-region = Rect2( 45, 0, 15, 8 )
+region = Rect2( 90, 0, 15, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 5 )
-region = Rect2( 60, 0, 15, 8 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 5 )
-region = Rect2( 75, 0, 15, 8 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 5 )
-region = Rect2( 90, 0, 15, 8 )
-
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 5 )
 region = Rect2( 105, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
 region = Rect2( 15, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 6 )
 region = Rect2( 30, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 6 )
 region = Rect2( 45, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 6 )
 region = Rect2( 60, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 6 )
 region = Rect2( 75, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 6 )
 region = Rect2( 90, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 6 )
 region = Rect2( 105, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 6 )
 region = Rect2( 120, 0, 15, 8 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 6 )
 region = Rect2( 135, 0, 15, 8 )
 
-[sub_resource type="SpriteFrames" id=28]
+[sub_resource type="SpriteFrames" id=25]
 animations = [ {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": false,
 "name": "Swipe",
 "speed": 10.0
 } ]
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=26]
 offsets = PoolRealArray( 0 )
 colors = PoolColorArray( 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=8]
-gradient = SubResource( 7 )
+[sub_resource type="GradientTexture" id=27]
+gradient = SubResource( 26 )
 width = 8
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=28]
 size = 48
 font_data = ExtResource( 3 )
 
@@ -175,6 +176,7 @@ __meta__ = {
 }
 
 [node name="Vignette" type="NinePatchRect" parent="CanvasLayer/HUD"]
+visible = false
 material = SubResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -186,7 +188,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 308.348, 333.042 )
 scale = Vector2( 31.0784, 41.8794 )
-frames = SubResource( 28 )
+frames = SubResource( 25 )
 frame = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD"]
@@ -200,7 +202,7 @@ margin_right = -20.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-texture = SubResource( 8 )
+texture = SubResource( 27 )
 patch_margin_left = 32
 patch_margin_top = 32
 patch_margin_right = 32
@@ -233,7 +235,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 28 )
 text = "Words"
 valign = 1
 
@@ -243,15 +245,18 @@ margin_right = 510.0
 margin_bottom = 100.0
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer2"]
-self_modulate = Color( 0.67451, 0.8, 0.894118, 1 )
-margin_left = 48.0
-margin_top = 20.0
-margin_right = 204.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 9 )
-text = "Words"
-valign = 1
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/HUD/HBoxContainer/CenterContainer2"]
+self_modulate = Color( 0.909804, 0.796078, 0.494118, 1 )
+margin_left = 86.0
+margin_top = 10.0
+margin_right = 166.0
+margin_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 80, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
 
 [node name="CenterContainer3" type="CenterContainer" parent="CanvasLayer/HUD/HBoxContainer"]
 margin_left = 514.0
@@ -265,7 +270,7 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 28 )
 text = "Words"
 valign = 1
 
@@ -281,12 +286,11 @@ margin_left = 48.0
 margin_top = 20.0
 margin_right = 204.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 28 )
 text = "Words"
 valign = 1
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="CanvasLayer/HUD"]
-self_modulate = Color( 0, 0, 0, 1 )
+[node name="Crosshair" type="NinePatchRect" parent="CanvasLayer/HUD"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -295,7 +299,6 @@ margin_left = -8.0
 margin_top = -8.0
 margin_right = 8.0
 margin_bottom = 8.0
-rect_rotation = 45.0
 rect_pivot_offset = Vector2( 8, 8 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -313,11 +316,11 @@ one_shot = true
 [node name="SwipeCooldown" type="Timer" parent="."]
 one_shot = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-bus = "PlayerSFX"
-
 [node name="InvincibilityTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = "PlayerSFX"
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="timeout" from="HairballCooldown" to="." method="shootCooldown"]

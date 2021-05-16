@@ -1,16 +1,21 @@
 extends KinematicBody
 
 export (NodePath) onready var targetObj;
-var target;
-var direction: Vector3;
 export (float) var SPEED = 2.0;
-var stunned = false;
 
 onready var stunTimer = $StunTimer;
+onready var anim = $AnimatedSprite3D;
+
+var target;
+var direction: Vector3;
+var stunned = false;
+var hasHat = true;
+var hatHealth = 3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	target = get_node(targetObj);
+	anim.play("WalkHat");
 
 func _physics_process(delta):
 	if(stunned): return;
@@ -24,9 +29,18 @@ func _on_Area_area_entered(area):
 		return;
 	
 	print("Stunned!");
+	
+	if(hasHat):
+		hatHealth -= 1;
+		hasHat = hatHealth >= 0;
+		anim.play("IdleHat");
+	else:
+		anim.play("Idle");
+
+	$StunParticles.emitting = true;
 	stunTimer.start();
 	stunned = true;
 
 func _on_StunTimer_timeout():
 	stunned = false;
-	
+	anim.play("WalkHat" if hasHat else "Walk");
