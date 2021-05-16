@@ -1,6 +1,6 @@
 extends Area
 
-export (int) var health = 1;
+export (int) var health = 3;
 export (Texture) var sprite = null;
 export (SpriteFrames) var spriteFrames;
 

@@ -217,7 +217,7 @@ transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 1, 0, 0, 0 )
 billboard = 2
 frames = SubResource( 36 )
 animation = "IdleHat"
-frame = 2
+frame = 3
 playing = true
 
 [node name="Area" type="Area" parent="."]
