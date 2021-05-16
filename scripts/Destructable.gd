@@ -15,4 +15,5 @@ func _on_Destructable_area_entered(area):
 
 func destroy():
 	print("Destroyed!");
+	$StunParticles.emitting = true;
 	queue_free()
