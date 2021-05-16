@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Hairball_02.wav-b4dc139bfc8d01a2b9b5fbb199e1be91.sample"
+
+[deps]
+
+source_file="res://assets/music/Hairball/Hairball_02.wav"
+dest_files=[ "res://.import/Hairball_02.wav-b4dc139bfc8d01a2b9b5fbb199e1be91.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
