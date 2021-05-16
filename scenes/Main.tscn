@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://basicMeshLib.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,16 +6,13 @@
 [ext_resource path="res://scenes/Human.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/bookshelf.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/models/armchair.obj" type="ArrayMesh" id=7]
+[ext_resource path="res://scenes/armchair.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/Destructable.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/art/floors-walls-garden/garden/red_apple.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Roomba.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 100, 0.1, 100 )
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.647059, 0.309804, 0.0823529, 1 )
 
 [node name="Main" type="Spatial"]
 
@@ -60,10 +57,7 @@ mix_target = 1
 
 [node name="bookshelf" parent="Objects" instance=ExtResource( 5 )]
 
-[node name="armchair" type="MeshInstance" parent="Objects"]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 44.6266, 1.00589, -59.1917 )
-mesh = ExtResource( 7 )
-material/0 = SubResource( 2 )
+[node name="armchair" parent="Objects" instance=ExtResource( 7 )]
 
 [node name="Table" parent="Objects" instance=ExtResource( 6 )]
 
