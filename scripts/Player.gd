@@ -11,6 +11,21 @@ onready var meowSFX = [
 	preload("res://assets/music/Meow_05.wav")
 ];
 
+onready var attackSFX = [
+	preload("res://assets/music/Attack/Paw_Attack_Swipe_01.wav"),
+	preload("res://assets/music/Attack/Paw_Attack_Swipe_02.wav"),
+	preload("res://assets/music/Attack/Paw_Attack_Swipe_03.wav")
+];
+
+onready var hairballSFX = [
+	preload("res://assets/music/Hairball/Hairball_01.wav"),
+	preload("res://assets/music/Hairball/Hairball_02.wav"),
+	preload("res://assets/music/Hairball/Hairball_03.wav"),
+	preload("res://assets/music/Hairball/Hairball_04.wav"),
+	preload("res://assets/music/Hairball/Hairball_05.wav"),
+	preload("res://assets/music/Hairball/Hairball_06.wav"),
+	preload("res://assets/music/Hairball/Hairball_07.wav")
+];
 
 onready var hairball = preload("res://scenes/Hairball.tscn");
 
@@ -67,7 +82,7 @@ func getInput(dt):
 		
 		animSprite.play("Swipe");
 		
-		playRandSound();
+		playRandSound(attackSFX);
 		
 		$Pivot/Camera/Swipe/CollisionShape.disabled = false;
 		#$Pivot/Camera/Swipe.visible = true;
@@ -78,7 +93,7 @@ func getInput(dt):
 		print("Hairball!");
 		canShoot = false;
 		
-		playRandSound();
+		playRandSound(hairballSFX);
 		
 		$HairballCooldown.start();
 		
@@ -92,9 +107,9 @@ func getInput(dt):
 func _physics_process(delta):
 	vel = move_and_slide(vel * MAX_SPEED, Vector3.UP);
 
-func playRandSound():
+func playRandSound(sfx):
 	if(audioPlayer.get_playback_position() > 1.5 || !audioPlayer.playing):
-			audioPlayer.stream = meowSFX[ randi() % meowSFX.size() ];
+			audioPlayer.stream = sfx[ randi() % sfx.size() ];
 			audioPlayer.play();
 
 func shootCooldown():
