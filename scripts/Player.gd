@@ -36,6 +36,7 @@ var targetVel = Vector2.ZERO;
 func _ready():
 	randomize();
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED);
+	livesLabel.text = "Lives: " + str(health);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
