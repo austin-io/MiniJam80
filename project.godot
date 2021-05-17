@@ -45,13 +45,18 @@ _global_script_class_icons={
 [application]
 
 config/name="MiniJam80Cats"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/StartScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
 DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
