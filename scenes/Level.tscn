@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://basicMeshLib.meshlib" type="MeshLibrary" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,9 +6,16 @@
 [ext_resource path="res://scenes/Human.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Destructables/RedCup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Destructables/RedVase.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Destructables/Fridge.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/bookshelf.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/armchair.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Destructables/Trophy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/Destructables/Lamp.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Destructables/Egg.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Destructables/Sofa.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Destructables/TV.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Destructables/Clock.tscn" type="PackedScene" id=16]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 100, 0.1, 100 )
@@ -21,10 +28,10 @@ transform = Transform( 0.865405, 0.219475, -0.450449, 0, 0.89897, 0.43801, 0.501
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( -0.751045, 0, -0.660251, 0, 1, 0, 0.660251, 0, -0.751045, 0, 2, 0 )
+transform = Transform( 0.647655, -0.000471364, 0.761934, 0.000211212, 1, 0.000439124, -0.761934, -0.000123514, 0.647654, -2.68443e-11, 2, -2.91038e-11 )
 
 [node name="Human" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27591, 3.04179, 5.71078 )
+transform = Transform( 1, 1.12443e-12, 1.16415e-10, 5.13332e-11, 1, 2.91038e-11, 0, -2.91038e-11, 1, -6.50978, 3.03447, -52.6016 )
 targetObj = NodePath("../Player")
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -61,8 +68,32 @@ transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 69.6842
 [node name="bookshelf3" parent="." instance=ExtResource( 8 )]
 transform = Transform( -1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -26.2187, 1.05851, 2.23016 )
 
+[node name="bookshelf5" parent="." instance=ExtResource( 8 )]
+transform = Transform( -3, 3.81768e-10, -2.63099e-07, 1.22142e-11, 3, -1.01863e-10, 2.62633e-07, -1.45519e-10, -3, 4.14023, 1.06248, -36.4115 )
+
+[node name="bookshelf6" parent="." instance=ExtResource( 8 )]
+transform = Transform( -3, 4.98183e-10, -2.63331e-07, 1.22142e-11, 3, -1.30967e-10, 2.62749e-07, -1.89175e-10, -3, 17.4369, 1.06556, -36.4164 )
+
+[node name="bookshelf7" parent="." instance=ExtResource( 8 )]
+transform = Transform( -3, 5.56383e-10, -2.63448e-07, 1.22071e-11, 3, -1.45519e-10, 2.62749e-07, -2.18279e-10, -3, 29.732, 1.0684, -36.4208 )
+
+[node name="bookshelf8" parent="." instance=ExtResource( 8 )]
+transform = Transform( -3, 6.72799e-10, -2.63681e-07, 1.22071e-11, 3, -1.74623e-10, 2.62982e-07, -2.47383e-10, -3, 43.0287, 1.07147, -36.4256 )
+
 [node name="Table" parent="." instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 107.124, -7.62939e-06, 33.492 )
+
+[node name="Table2" parent="." instance=ExtResource( 9 )]
+transform = Transform( -4.38013e-08, 1.12088e-12, 0.75, -3.63798e-11, 1, -4.67182e-13, -1, -3.63798e-11, -3.28e-08, 16.1629, -0.0243888, -8.99526 )
+
+[node name="Table5" parent="." instance=ExtResource( 9 )]
+transform = Transform( -2.19588e-08, 5.48894e-13, 0.5, -5.09317e-11, 0.5, 2.11298e-12, -0.5, -5.09317e-11, -2.1857e-08, 1.05366, -0.0262698, 11.4467 )
+
+[node name="Table3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 1.1191e-12, -6.57456e-08, -7.74492e-13, 1, -2.18279e-11, 8.74279e-08, -4.36557e-11, -0.75, 81.3883, -0.0168712, -104.881 )
+
+[node name="Table4" parent="." instance=ExtResource( 9 )]
+transform = Transform( -1, 1.10845e-12, -6.5862e-08, -7.74492e-13, 1, -3.63798e-11, 8.74279e-08, -7.27596e-11, -0.75, 100.5, -0.0124532, -104.888 )
 
 [node name="armchair" parent="." instance=ExtResource( 10 )]
 transform = Transform( -3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 53.687, 0, 0.693519 )
@@ -88,14 +119,68 @@ transform = Transform( 1, 1.10489e-12, 0, 9.24512e-10, 1, 2.32831e-10, 9.31323e-
 [node name="Destructable2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 1.10489e-12, 0, 1.44842e-09, 1, 3.63798e-10, 1.45519e-09, 0, 1, 50.3068, 6.42357, -1.43986 )
 
-[node name="Destructable3" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 1.10489e-12, 0, 2.55072e-10, 1, 6.54836e-11, 2.61934e-10, 0, 1, -26.1725, 6.68851, -0.804531 )
-
 [node name="Destructable4" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 1.10489e-12, 0, 3.42389e-10, 1, 8.73115e-11, 3.49246e-10, 0, 1, -26.1704, 6.68896, 4.95194 )
 
 [node name="Destructable5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 1.10489e-12, 0, 3.13284e-10, 1, 8.00355e-11, 3.20142e-10, 0, 1, -26.1812, 6.68662, -24.7255 )
 
-[node name="Destructable6" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 1.10489e-12, 0, 4.00602e-10, 1, 1.01863e-10, 4.07454e-10, 0, 1, -26.1791, 6.68707, -18.9691 )
+[node name="Destructable7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 1.09424e-12, 4.36557e-10, 2.11404e-10, 1, 1.09139e-10, 0, -1.09139e-10, 1, 69.8723, 6.91333, -19.7355 )
+
+[node name="Destructable8" parent="." instance=ExtResource( 7 )]
+transform = Transform( 9.00001, 6.21355e-10, 4.19095e-09, -1.49186e-10, 9.00001, 5.82077e-10, -3.0268e-09, -6.40284e-10, 9, 5.99965, 2.34683, -68.1318 )
+
+[node name="Destructable9" parent="." instance=ExtResource( 7 )]
+transform = Transform( 9.00001, 1.08705e-09, 5.12227e-09, -1.49186e-10, 9.00001, 6.98492e-10, -3.72529e-09, -7.567e-10, 9, -11.897, 2.34269, -68.1253 )
+
+[node name="Destructable10" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 1.07825e-12, 6.1118e-10, 2.98716e-10, 1, 1.52795e-10, 0, -1.52795e-10, 1, 29.1915, 6.75028, -66.615 )
+
+[node name="Destructable11" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 1.06937e-12, 7.27596e-10, 3.56923e-10, 1, 1.81899e-10, 0, -1.81899e-10, 1, 64.689, 6.7588, -62.714 )
+
+[node name="Destructable12" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 1.09424e-12, 4.36557e-10, 2.11404e-10, 1, 1.09139e-10, 0, -1.09139e-10, 1, 47.8055, 6.77258, -62.6403 )
+
+[node name="Destructable13" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.10489e-12, 3.20142e-10, 1.53197e-10, 1, 8.00355e-11, 0, -8.00355e-11, 1, 40.3837, 6.82676, -36.2353 )
+
+[node name="Destructable14" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 1.09424e-12, 4.36557e-10, 2.11404e-10, 1, 1.09139e-10, 0, -1.09139e-10, 1, 45.5683, 6.80873, -36.7424 )
+
+[node name="Destructable15" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.09956e-12, 3.7835e-10, 1.823e-10, 1, 9.45874e-11, 0, -9.45874e-11, 1, 27.5258, 6.82379, -36.2307 )
+
+[node name="Destructable16" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 1.08891e-12, 4.94765e-10, 2.40508e-10, 1, 1.23691e-10, 0, -1.23691e-10, 1, 32.7104, 6.80576, -36.7377 )
+
+[node name="Destructable17" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.09424e-12, 4.36557e-10, 2.11404e-10, 1, 1.09139e-10, 0, -1.09139e-10, 1, 15.0323, 6.8209, -36.2261 )
+
+[node name="Destructable18" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 1.08358e-12, 5.52973e-10, 2.69612e-10, 1, 1.38243e-10, 0, -1.38243e-10, 1, 20.2169, 6.80287, -36.7332 )
+
+[node name="Destructable19" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 1.08891e-12, 4.94765e-10, 2.40508e-10, 1, 1.23691e-10, 0, -1.23691e-10, 1, 1.08263, 6.81768, -36.2211 )
+
+[node name="Destructable20" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 1.07825e-12, 6.1118e-10, 2.98716e-10, 1, 1.52795e-10, 0, -1.52795e-10, 1, 6.26724, 6.79965, -36.7282 )
+
+[node name="Destructable21" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 1.13154e-12, 2.91038e-11, 7.67564e-12, 1, 7.27596e-12, 0, -7.27596e-12, 1, -18.8925, 24.0028, -13.241 )
+
+[node name="Destructable22" parent="." instance=ExtResource( 14 )]
+transform = Transform( 10, -1.56058e-09, 6.98492e-10, 1.85207e-09, 10, 8.73115e-10, -6.98492e-10, -8.73115e-10, 10, -6.07559, 2.59503, -10.238 )
+
+[node name="Destructable23" parent="." instance=ExtResource( 15 )]
+transform = Transform( 9.00001, -1.70726e-09, 3.25963e-09, 1.94629e-09, 9.00001, 1.39698e-09, -2.32831e-09, -1.45519e-09, 9, -24.6856, 6.4606, -10.0713 )
+
+[node name="Destructable3" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 1.09956e-12, 3.7835e-10, 1.823e-10, 1, 9.45874e-11, 0, -9.45874e-11, 1, -26.3557, 6.62801, 0.170594 )
+
+[node name="Destructable6" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 1.08358e-12, 5.52973e-10, 2.69612e-10, 1, 1.38243e-10, 0, -1.38243e-10, 1, -26.4713, 6.44081, -19.6359 )
+
+[node name="Destructable24" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 1.06404e-12, 7.85803e-10, 3.86027e-10, 1, 1.96451e-10, 0, -1.96451e-10, 1, 69.2823, 7.00296, -24.3456 )
