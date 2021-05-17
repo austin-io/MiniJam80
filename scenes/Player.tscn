@@ -124,133 +124,133 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="DynamicFont" id=28]
+[sub_resource type="DynamicFont" id=26]
 size = 48
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 11 )
 region = Rect2( 12, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 11 )
 region = Rect2( 24, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 11 )
 region = Rect2( 36, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 11 )
 region = Rect2( 48, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 11 )
 region = Rect2( 60, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=36]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 11 )
 region = Rect2( 72, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=37]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 11 )
 region = Rect2( 84, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 11 )
 region = Rect2( 96, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 11 )
 region = Rect2( 108, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=40]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 11 )
 region = Rect2( 120, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=41]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 11 )
 region = Rect2( 132, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=42]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 11 )
 region = Rect2( 144, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 11 )
 region = Rect2( 156, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 11 )
 region = Rect2( 168, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 11 )
 region = Rect2( 180, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 11 )
 region = Rect2( 192, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 11 )
 region = Rect2( 204, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 11 )
 region = Rect2( 216, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 11 )
 region = Rect2( 228, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=50]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 11 )
 region = Rect2( 240, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=51]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 11 )
 region = Rect2( 252, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=52]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 11 )
 region = Rect2( 264, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 11 )
 region = Rect2( 276, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=54]
+[sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 11 )
 region = Rect2( 288, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=55]
+[sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 11 )
 region = Rect2( 300, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=56]
+[sub_resource type="AtlasTexture" id=53]
 atlas = ExtResource( 11 )
 region = Rect2( 312, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=57]
+[sub_resource type="AtlasTexture" id=54]
 atlas = ExtResource( 11 )
 region = Rect2( 324, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=58]
+[sub_resource type="AtlasTexture" id=55]
 atlas = ExtResource( 11 )
 region = Rect2( 336, 0, 12, 13 )
 
-[sub_resource type="AtlasTexture" id=59]
+[sub_resource type="AtlasTexture" id=56]
 atlas = ExtResource( 11 )
 region = Rect2( 348, 0, 12, 13 )
 
-[sub_resource type="SpriteFrames" id=29]
+[sub_resource type="SpriteFrames" id=57]
 animations = [ {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ) ],
+"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -364,7 +364,7 @@ margin_left = 23.0
 margin_top = 10.0
 margin_right = 179.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "Words"
 valign = 1
 
@@ -397,7 +397,7 @@ margin_left = 86.0
 margin_top = 10.0
 margin_right = 116.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "9"
 valign = 1
 
@@ -412,7 +412,7 @@ margin_left = 23.0
 margin_top = 10.0
 margin_right = 179.0
 margin_bottom = 70.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "10     10"
 valign = 1
 
@@ -436,7 +436,7 @@ margin_left = 530.059
 margin_top = 533.941
 margin_right = 596.059
 margin_bottom = 593.941
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "9"
 align = 1
 valign = 1
@@ -446,7 +446,7 @@ margin_left = 684.811
 margin_top = 532.0
 margin_right = 790.811
 margin_bottom = 592.0
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "9"
 align = 1
 valign = 1
@@ -459,7 +459,7 @@ margin_left = 790.811
 margin_top = 533.941
 margin_right = 896.811
 margin_bottom = 593.941
-custom_fonts/font = SubResource( 28 )
+custom_fonts/font = SubResource( 26 )
 text = "9"
 align = 1
 valign = 1
@@ -475,8 +475,8 @@ texture = ExtResource( 10 )
 [node name="CatFace" type="AnimatedSprite" parent="CanvasLayer/HUD"]
 position = Vector2( 407.256, 546.445 )
 scale = Vector2( 11.0509, 6.69097 )
-frames = SubResource( 29 )
-frame = 16
+frames = SubResource( 57 )
+frame = 28
 playing = true
 
 [node name="HairballCooldown" type="Timer" parent="."]

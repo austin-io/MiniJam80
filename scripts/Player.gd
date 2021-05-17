@@ -113,7 +113,7 @@ func _physics_process(delta):
 	vel = move_and_slide(vel * MAX_SPEED, Vector3.UP);
 
 func playRandSound(sfx):
-	if(audioPlayer.get_playback_position() > 1.5 || !audioPlayer.playing):
+	if(audioPlayer.get_playback_position() > 1.0 || !audioPlayer.playing):
 			audioPlayer.stream = sfx[ randi() % sfx.size() ];
 			audioPlayer.play();
 
