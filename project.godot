@@ -56,7 +56,6 @@ DialogicSingleton="*res://addons/dialogic/Other/DialogicSingleton.gd"
 [display]
 
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
