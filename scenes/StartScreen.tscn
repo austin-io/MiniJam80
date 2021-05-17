@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/art/buttons/button_playintro.png" type="Texture" id=1]
 [ext_resource path="res://scripts/StartScreen.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/buttons/button_start.png" type="Texture" id=3]
+[ext_resource path="res://assets/music/cat-jam-alternate-theme-draft01.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/art/pack3/ui/cat.png" type="Texture" id=5]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.274194, 0.446237, 0.629032, 1 )
@@ -27,6 +29,15 @@ position = Vector2( 528.083, 302.443 )
 rotation = -1.5708
 scale = Vector2( 0.620611, 1236.56 )
 texture = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="."]
+self_modulate = Color( 0.101961, 0.0156863, 0.0156863, 0.537255 )
+position = Vector2( 528.803, 214.525 )
+scale = Vector2( 71.643, 66.3731 )
+texture = ExtResource( 5 )
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -34,14 +45,15 @@ anchor_bottom = 1.0
 margin_right = 1024.0
 margin_bottom = 600.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="StartBtn" type="TextureButton" parent="Control"]
 margin_left = 438.205
-margin_top = 241.265
+margin_top = 352.263
 margin_right = 632.205
-margin_bottom = 318.265
+margin_bottom = 429.263
 texture_normal = ExtResource( 3 )
 expand = true
 __meta__ = {
@@ -50,9 +62,9 @@ __meta__ = {
 
 [node name="IntroBtn" type="TextureButton" parent="Control"]
 margin_left = 419.631
-margin_top = 340.914
+margin_top = 451.912
 margin_right = 655.631
-margin_bottom = 417.914
+margin_bottom = 528.912
 texture_normal = ExtResource( 1 )
 expand = true
 __meta__ = {
@@ -61,13 +73,17 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control"]
 margin_left = 227.599
-margin_top = 88.4544
+margin_top = 199.453
 margin_right = 836.599
-margin_bottom = 178.454
+margin_bottom = 289.453
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Kittenstein 3D"
 align = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [connection signal="pressed" from="Control/StartBtn" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Control/IntroBtn" to="." method="_on_IntroBtn_pressed"]
