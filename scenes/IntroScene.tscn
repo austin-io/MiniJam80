@@ -150,7 +150,7 @@ texture = SubResource( 2 )
 position = Vector2( 511.272, 200.024 )
 scale = Vector2( 59.3202, 59.1952 )
 frames = SubResource( 33 )
-frame = 12
+frame = 11
 playing = true
 
 [node name="DialogNode" parent="." instance=ExtResource( 1 )]
