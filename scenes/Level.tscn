@@ -35,6 +35,7 @@ transform = Transform( 0.647655, -0.000471364, 0.761934, 0.000211212, 1, 0.00043
 [node name="Human" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 1.12443e-12, 1.16415e-10, 5.13332e-11, 1, 2.91038e-11, 0, -2.91038e-11, 1, -6.50978, 3.03447, -52.6016 )
 targetObj = NodePath("../Player")
+SPEED = 3.5
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 1 )
