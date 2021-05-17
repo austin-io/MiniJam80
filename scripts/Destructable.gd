@@ -29,6 +29,7 @@ func _on_Destructable_area_entered(area):
 
 func destroy():
 	print("Destroyed!");
+	isBroken = true;
 	$StunParticles.emitting = true;
 	$MeshInstance.visible = false;
 	$AudioStreamPlayer3D.play();
