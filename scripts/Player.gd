@@ -72,12 +72,12 @@ func getInput(dt):
 	#transform.basis.z
 	targetVel.x = Input.get_action_strength("moveRight") - Input.get_action_strength("moveLeft");
 	targetVel.y = Input.get_action_strength("backward") - Input.get_action_strength("forward");
-	
+	targetVel = targetVel.normalized();
 	vel = transform.basis.z * targetVel.y;
 	vel += transform.basis.x * targetVel.x;
 	
 	if(!isGrounded):
-		vel.y -= 10;
+		vel.y -= 0.1;
 	
 	# Melee Attack
 	if(Input.is_action_just_pressed("attack") && canSwipe):
@@ -110,7 +110,7 @@ func getInput(dt):
 	#vel.z = lerp(vel.z, targetVel.y*MAX_SPEED, dt*10);
 
 func _physics_process(delta):
-	vel = move_and_slide(vel * MAX_SPEED, Vector3.UP);
+	vel = move_and_slide(vel * MAX_SPEED * delta * 80, Vector3.UP);
 
 func playRandSound(sfx):
 	if(audioPlayer.get_playback_position() > 1.0 || !audioPlayer.playing):

@@ -476,7 +476,7 @@ texture = ExtResource( 10 )
 position = Vector2( 407.256, 546.445 )
 scale = Vector2( 11.0509, 6.69097 )
 frames = SubResource( 57 )
-frame = 28
+frame = 13
 playing = true
 
 [node name="HairballCooldown" type="Timer" parent="."]
